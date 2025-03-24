@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  py-postgres:
+    image: postgres:latest
+    container_name: py-postgres
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: adminodoodev
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_data1:/var/lib/postgresql/data
+
+volumes:
+  pg_data1:
